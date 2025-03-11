@@ -70,7 +70,7 @@ kubectl version --client
 
 
 ```
-curl -sSl 'https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar -xz -C /tmp
+curl -sSl "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar -xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
