@@ -19,43 +19,69 @@
 
 ## step-3 :- download the AWS cli installer
 
-   - Go to aws cli website and download aws cli for linux (ubuntu user)
+Go to aws cli website and download aws cli for linux (ubuntu user)
 
-   - `curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"`
+
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```
 
 
 ## step-4 :- unzip the installer
 
-   - `sudo apt update`
 
-   - `sudo apt install unzip`
+```
+sudo apt update
 
-   - `unzip awscliv2.zip`
+sudo apt install unzip
 
-   - `sudo ./aws/install`
+unzip awscliv2.zip
 
-   - `aws --version`
+sudo ./aws/install
 
-   - `aws configure`
-     ( provide your access key and secret access key )
+aws --version
+```
+
+```
+aws configure
+```
+
+( provide your access key and secret access key )
 
 
 ## step-5 :- install k8s tool
 
+
+### install kubectl
+
+
 `https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/`
 
-   - `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
+```
 
-   - `curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"`
 
-   - `echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check`
+### install eksctl
 
-   - `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
-   - `kubectl version --client`
+```
+curl -sSl 'https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" |
+tar -xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
+```
 
 
 ## step-6 :- create k8s cluster
 
-   - `eksctl create cluster --name mycluster --region ap-south-1 --node-type t2.micro --nodes-min 2 --nodes-max 3`
+
+```
+eksctl create cluster --name mycluster --region ap-south-1 --node-type t2.micro --nodes-min 2 --nodes-max 3
+```
+
 
