@@ -34,4 +34,7 @@
 
    - `sudo ./aws/install`
 
+   - `aws --version`
+
    - `aws configure`
+     ( provide your access key and secret access key )
