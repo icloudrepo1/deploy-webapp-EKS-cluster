@@ -103,3 +103,20 @@ eksctl create cluster --name mycluster --region ap-south-1 --node-type t2.micro 
 ```
 
 
+## step-7 :- list of existing cluster
+
+
+```
+eksctl get clusters
+```
+
+
+## step-8 :- delete a cluster
+
+
+```
+eksctl delete cluster --name mycluster
+```
+
+
+---------
