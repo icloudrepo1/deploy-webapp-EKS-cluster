@@ -69,8 +69,16 @@ kubectl version --client
 ### install eksctl
 
 
+
 ```
-curl -sSl "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar -xz -C /tmp
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install -y curl tar unzip jq
+```
+
+```
+curl -sSl "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" |
+tar -xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
