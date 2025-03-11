@@ -53,3 +53,9 @@
    - `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
 
    - `kubectl version --client`
+
+
+## step-6 :- create k8s cluster
+
+   - `eksctl create cluster --name mycluster --region ap-south-1 --node-type t2.micro --nodes-min 2 --nodes-max 3`
+
